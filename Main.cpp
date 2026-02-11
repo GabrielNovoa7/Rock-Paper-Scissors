@@ -8,6 +8,7 @@ int main()
 {
     bool x = true;
     int menuOption = 0;
+    srand(time(NULL));
 
     while (x == true)
     {
@@ -22,7 +23,7 @@ int main()
         }
         else if (menuOption == 2)
         {
-            //run the game function
+            runGame();
         }
         else if (menuOption == 3)
         {

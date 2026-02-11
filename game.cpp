@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
-#include <random>
+#include <cstdlib>
+#include <ctime>
 #include "game.h"
 using namespace std;
 
-void displayInstructions()
+void displayInstructions() // Used to display the instructions on how to play rock paper scissors.
 {
     cout << "ROCK PAPER SCISSORS - HOW TO PLAY\n"
         << "----------------------------------\n"
@@ -20,14 +21,24 @@ void displayInstructions()
         << "You can continue playing as many rounds as you like.\n\n\n";
 }
 
-void displayMenuOptions()
+void displayMenuOptions() // menu options so that the user can run through the program.
 {
     cout << "        MENU\n 1 : How to Play?\n 2 : Start Game\n 3 : End Game\n";
 }
 
-void runGame()
+void runGame() // actual function where the game is going to be ran through.
 {
     int cpuSelection, userSelection;
-    cpuSelection;
+    cpuSelection = rand() % 3 + 1;//int num = rand() % range + min_value;
+    
+    cout << "Rock: 1\nPaper: 2\nScissors: 3\nSelect your option: ";
+    cin >> userSelection;
+
+    while (userSelection == (1 | 2 | 3))
+    {
+        cout << "Invalid Option Selected, Please try again: ";
+        cin >> userSelection;
+    }
+    
 }
 
