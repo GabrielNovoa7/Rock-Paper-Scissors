@@ -8,6 +8,8 @@ A console-based Rock Paper Scissors game built in C++.
 - CPU opponent
 - Randomized outcomes
 - Modular file structure (header/source separation)
+- Winner determined using modular arithmetic instead of long conditional chains
+
 
 ## Technologies Used
 - C++
