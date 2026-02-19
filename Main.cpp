@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
     bool x = true;
-    int menuOption = 0;
+    int menuOption;
     srand(time(NULL));
 
     while (x == true)
@@ -15,27 +15,21 @@ int main()
         displayMenuOptions();
         cin >> menuOption;
 
-        if (menuOption == 1) 
+        switch (menuOption)
         {
+        case 1:
             displayInstructions();
-            displayMenuOptions();
-            cin >> menuOption;
-        }
-        else if (menuOption == 2)
-        {
+            break;
+        case 2:
             runGame();
-        }
-        else if (menuOption == 3)
-        {
+            break;
+        case 3:
             x = false;
-        }
-        else
-        {
+            break;
+        default:
             cout << "ERROR INCORRECT OPTION CHOSEN PLEASE TRY AGAIN" << endl;
-            displayMenuOptions();
-            cin >> menuOption;
+            break;
         }
     }
-
     return 0;
 }

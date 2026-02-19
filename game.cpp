@@ -29,16 +29,30 @@ void displayMenuOptions() // menu options so that the user can run through the p
 void runGame() // actual function where the game is going to be ran through.
 {
     int cpuSelection, userSelection;
-    cpuSelection = rand() % 3 + 1;//int num = rand() % range + min_value;
+    cpuSelection = rand() % 3;//int num = rand() % range + min_value;
     
-    cout << "Rock: 1\nPaper: 2\nScissors: 3\nSelect your option: ";
+    cout << "Rock: 0\nPaper: 1\nScissors: 2\nSelect your option: ";
     cin >> userSelection;
 
-    while (userSelection == (1 | 2 | 3))
+    //Input validation
+    while (userSelection <0 || userSelection > 2)
     {
         cout << "Invalid Option Selected, Please try again: ";
         cin >> userSelection;
     }
-    
+    // display cpu choice
+    string names[3] = { "Rock", "Paper", "Scissors" };
+
+    // result = (user - cpu + 3)%3
+    int result = (userSelection - cpuSelection + 3) % 3; // +3 because c++ mod can go to the negatives
+    cout << "\nCPU chose: " << names[cpuSelection] << endl;
+    cout << "You chose: " << names[userSelection] << endl;
+
+    if (result == 0)
+        cout << "Tie!\n";
+    else if (result == 1)
+        cout << "You Win!\n";
+    else
+        cout << "CPU Wins!\n";
 }
 
